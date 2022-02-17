@@ -27,13 +27,13 @@ class Modal extends Component {
   };
 
   render() {
-    const { content, } = this.props;
+    const { children } = this.props;
     const { close } = this;
 
     return createPortal(
       <div className={styles.overlay} onClick={close}>
         <div className={styles.modal}>
-          <img src={content.image} alt={content.alt} />
+          {children}
         </div>
       </div>,
       modalRoot

@@ -99,13 +99,13 @@ hideModal = ()=> {
         <Searchbar onSubmit={changeSearch} />
         {error && <p>Ошибка поиска</p>}
         {!images.length && search && !loading && !error && (
-          <p>По запросу {search} ничего не найденно</p>
+          <p>По запросу {search} ничего не найдено</p>
         )}
-        {modalOpen && <Modal handleClose={hideModal} content={modalContent}/>}
+        {modalOpen && <Modal handleClose={hideModal}><img src={modalContent.image} alt={modalContent.alt} /></Modal>}
         {Boolean(images.length) && <ImageGallery images={images} handleClick={showModal}/>}
         <div className={styles.wrapperButton}>
         {loading && <Hearts color="#3f51b5" height={80} width={80} />}
-        {images.length < totalHits && !loading && <Button onClick={loadMore} />}
+        {images.length < totalHits && !loading && <Button onClick={loadMore} text='Load more' />}
         </div>
       </div>
     );
