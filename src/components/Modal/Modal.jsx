@@ -45,9 +45,5 @@ export default Modal;
 
 
 Modal.propTypes = {
-    content: PropTypes.shape({
-        image: PropTypes.string.isRequired,
-        alt: PropTypes.string
-    }).isRequired,
     handleClose: PropTypes.func.isRequired
 }
